@@ -143,6 +143,9 @@ services:
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод, файл compose.yaml , скриншот portainer c задеплоенным компоузом.
 
+![Скриншот-9](https://github.com/plusvaldis/sdb-hw/blob/main/12.03-hw/images/9.png)
+![Скриншот-10](https://github.com/plusvaldis/sdb-hw/blob/main/12.03-hw/images/10.png)
+
 ---
 
 ### Правила приема
