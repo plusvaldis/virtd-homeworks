@@ -37,16 +37,16 @@ Hey, Netology
 - контейнер работает в фоне
 - контейнер опубликован на порту хост системы 127.0.0.1:8080  
 Ответ: Docker run --name CherepanovVA-custom-nginx-t2 -d -p 8080:80 dky97/custom-nginx:1.0.0
-![Скриншот-1](https://github.com/plusvaldis/virtd-homeworks/tree/main/05-virt-03-docker-intro/images/1.png)
+![Скриншот-1](https://github.com/plusvaldis/virtd-homeworks/blob/main/05-virt-03-docker-intro/images/1.png)
 2. Переименуйте контейнер в "custom-nginx-t2"  
 Ответ: docker rename CherepanovVA-custom-nginx-t2 custom-nginx-t2  
-![Скриншот-2](https://github.com/plusvaldis/virtd-homeworks/tree/main/05-virt-03-docker-intro/images/2.png)
+![Скриншот-2](https://github.com/plusvaldis/virtd-homeworks/blob/main/05-virt-03-docker-intro/images/2.png)
 
 3. Выполните команду ```date +"%d-%m-%Y %T.%N %Z" && sleep 0.150 && docker ps && ss -tlpn | grep 127.0.0.1:8080  && docker logs custom-nginx-t2 -n1 && docker exec -it custom-nginx-t2 base64 /usr/share/nginx/html/index.html```  
-![Скриншот-3](https://github.com/plusvaldis/virtd-homeworks/tree/main/05-virt-03-docker-intro/images/3.png)
+![Скриншот-3](https://github.com/plusvaldis/virtd-homeworks/blob/main/05-virt-03-docker-intro/images/3.png)
 
 4. Убедитесь с помощью curl или веб браузера, что индекс-страница доступна.  
-![Скриншот-4](https://github.com/plusvaldis/virtd-homeworks/tree/main/05-virt-03-docker-intro/images/4.png)
+![Скриншот-4](https://github.com/plusvaldis/virtd-homeworks/blob/main/05-virt-03-docker-intro/images/4.png)
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
 
@@ -71,7 +71,7 @@ Hey, Netology
 11. * Это дополнительное, необязательное задание. Попробуйте самостоятельно исправить конфигурацию контейнера, используя доступные источники в интернете. Не изменяйте конфигурацию nginx и не удаляйте контейнер. Останавливать контейнер можно. [пример источника](https://www.baeldung.com/linux/assign-port-docker-container)  
 
 Ответ: выполнил docker inspect custom-nginx-t2 нашел строку Id, затем остановил контейнер и остановил службу docker.socket, затем перешел по пути /var/lib/docker/container/id контейнера/ там отредактировал два файла hostconfig and config.v2. изменил port 80 на 81, после запустил сервис docker.socket и запустил контейнер, он стал доступен по 81 порту контейнера.  
-![Скриншот-6](https://github.com/plusvaldis/virtd-homeworks/tree/main/05-virt-03-docker-intro/images/6.png)
+![Скриншот-6](https://github.com/plusvaldis/virtd-homeworks/blob/main/05-virt-03-docker-intro/images/6.png)
 12. Удалите запущенный контейнер "custom-nginx-t2", не останавливая его.(воспользуйтесь --help или google)  
 Ответ: docker rm -f custom-nginx-t2
 
@@ -91,7 +91,7 @@ Hey, Netology
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.  
 
-![Скриншот-7](https://github.com/plusvaldis/virtd-homeworks/tree/main/05-virt-03-docker-intro/images/7.png)
+![Скриншот-7](https://github.com/plusvaldis/virtd-homeworks/blob/main/05-virt-03-docker-intro/images/7.png)
 
 ## Задача 5
 
@@ -137,14 +137,14 @@ services:
       - "9090:80"
 ```
 6. Перейдите на страницу "http://127.0.0.1:9000/#!/2/docker/containers", выберите контейнер с nginx и нажмите на кнопку "inspect". В представлении <> Tree разверните поле "Config" и сделайте скриншот от поля "AppArmorProfile" до "Driver".  
-![Скриншот-8](https://github.com/plusvaldis/virtd-homeworks/tree/main/05-virt-03-docker-intro/images/8.png)
+![Скриншот-8](https://github.com/plusvaldis/virtd-homeworks/blob/main/05-virt-03-docker-intro/images/8.png)
 
 7. Удалите любой из манифестов компоуза(например compose.yaml).  Выполните команду "docker compose up -d". Прочитайте warning, объясните суть предупреждения и выполните предложенное действие. Погасите compose-проект ОДНОЙ(обязательно!!) командой.
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод, файл compose.yaml , скриншот portainer c задеплоенным компоузом.
 
-![Скриншот-9](https://github.com/plusvaldis/virtd-homeworks/tree/main/05-virt-03-docker-intro/images/9.png)
-![Скриншот-10](https://github.com/plusvaldis/virtd-homeworks/tree/main/05-virt-03-docker-intro/images/10.png)
+![Скриншот-9](https://github.com/plusvaldis/virtd-homeworks/blob/main/05-virt-03-docker-intro/images/9.png)
+![Скриншот-10](https://github.com/plusvaldis/virtd-homeworks/blob/main/05-virt-03-docker-intro/images/10.png)
 
 ---
 
