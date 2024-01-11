@@ -37,16 +37,16 @@ Hey, Netology
 - контейнер работает в фоне
 - контейнер опубликован на порту хост системы 127.0.0.1:8080  
 Ответ: Docker run --name CherepanovVA-custom-nginx-t2 -d -p 8080:80 dky97/custom-nginx:1.0.0
-Snapshot1
+![Скриншот-1](https://github.com/plusvaldis/sdb-hw/blob/main/12.03-hw/images/1.png)
 2. Переименуйте контейнер в "custom-nginx-t2"  
 Ответ: docker rename CherepanovVA-custom-nginx-t2 custom-nginx-t2  
-Snapshot2
+![Скриншот-2](https://github.com/plusvaldis/sdb-hw/blob/main/12.03-hw/images/2.png)
 
 3. Выполните команду ```date +"%d-%m-%Y %T.%N %Z" && sleep 0.150 && docker ps && ss -tlpn | grep 127.0.0.1:8080  && docker logs custom-nginx-t2 -n1 && docker exec -it custom-nginx-t2 base64 /usr/share/nginx/html/index.html```  
-Snapshot3
+![Скриншот-3](https://github.com/plusvaldis/sdb-hw/blob/main/12.03-hw/images/3.png)
 
 4. Убедитесь с помощью curl или веб браузера, что индекс-страница доступна.  
-Snapshot4
+![Скриншот-4](https://github.com/plusvaldis/sdb-hw/blob/main/12.03-hw/images/4.png)
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
 
