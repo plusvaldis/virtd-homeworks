@@ -139,6 +139,7 @@ services:
 
 ![Скриншот-9](https://github.com/plusvaldis/virtd-homeworks/blob/main/05-virt-03-docker-intro/images/9.png)
 ![Скриншот-10](https://github.com/plusvaldis/virtd-homeworks/blob/main/05-virt-03-docker-intro/images/10.png)
-
+![Скриншот-12](https://github.com/plusvaldis/virtd-homeworks/blob/main/05-virt-03-docker-intro/images/12.png)
+![Скриншот-11](https://github.com/plusvaldis/virtd-homeworks/blob/main/05-virt-03-docker-intro/images/11.png)
 ---
 
