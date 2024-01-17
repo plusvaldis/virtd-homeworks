@@ -1,11 +1,5 @@
 # Домашнее задание к занятию 5. «Практическое применение Docker» - Черепанов Владислав
 
-### Инструкция к выполнению
-
-1. Для выполнения заданий обязательно ознакомьтесь с [инструкцией](https://github.com/netology-code/devops-materials/blob/master/cloudwork.MD) по экономии облачных ресурсов. Это нужно, чтобы не расходовать средства, полученные в результате использования промокода.
-3. Своё решение к задачам оформите в вашем GitHub репозитории.
-4. В личном кабинете отправьте на проверку ссылку на .md-файл в вашем репозитории.
-5. Сопроводите ответ необходимыми скриншотами.
 
 ---
 ## Примечание: Ознакомьтесь со схемой виртуального стенда [по ссылке](https://github.com/netology-code/shvirtd-example-python/blob/main/schema.pdf)
@@ -16,14 +10,29 @@
 1. Сделайте в своем github пространстве fork репозитория ```https://github.com/netology-code/shvirtd-example-python/blob/main/README.md```.   
 2. Создайте файл с именем ```Dockerfile.python``` для сборки данного проекта. Используйте базовый образ ```python:3.9-slim```. Протестируйте корректность сборки. Не забудьте dockerignore.
 3. (Необязательная часть, *) Изучите инструкцию в проекте и запустите web-приложение без использования docker в venv. (Mysql БД можно запустить в docker run).
-4. (Необязательная часть, *) По образцу предоставленного python кода внесите в него исправление для управления названием используемой таблицы через ENV переменную.
+4. (Необязательная часть, *) По образцу предоставленного python кода внесите в него исправление для управления названием используемой таблицы через ENV переменную.  
+Создали Dockerfile с кодом:
+```FROM python:3.9-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY main.py .
+CMD ["python", "main.py"]```  
+
+Запустили сборку приложения ```docker build -t test_python .```  
+
+![Скриншот-1](https://github.com/plusvaldis/virtd-homeworks/blob/main/05-virt-03-docker-intro/images/1.png)
 
 ## Задача 2 (*)
-1. Создайте в yandex cloud container registry с именем "test" с помощью "yc tool" . [Инструкция](https://cloud.yandex.ru/ru/docs/container-registry/quickstart/?from=int-console-help)
+1. Создайте в yandex cloud container registry с именем "test" с помощью "yc tool" . [Инструкция](https://cloud.yandex.ru/ru/docs/container-registry/quickstart/?from=int-console-help)  
+Установлен ус  
+![Скриншот-2](https://github.com/plusvaldis/virtd-homeworks/blob/main/05-virt-03-docker-intro/images/2.png)  
+
 2. Настройте аутентификацию вашего локального docker в yandex container registry.
 3. Соберите и залейте в него образ с python приложением из задания №1.
 4. Просканируйте образ на уязвимости.
-5. В качестве ответа приложите отчет сканирования.
+5. В качестве ответа приложите отчет сканирования.  
+![Скриншот-3](https://github.com/plusvaldis/virtd-homeworks/blob/main/05-virt-03-docker-intro/images/3.png) 
 
 ## Задача 3
 1. Создайте файл ```compose.yaml```. Опишите в нем следующие сервисы: 
@@ -37,7 +46,9 @@
 
 5. Подключитесь к БД mysql с помощью команды ```docker exec <имя_контейнера> mysql -uroot -p<пароль root-пользователя>``` . Введите последовательно команды (не забываем в конце символ ; ): ```show databases; use <имя вашей базы данных(по-умолчанию example)>; show tables; SELECT * from requests LIMIT 10;```.
 
-6. Остановите проект. В качестве ответа приложите скриншот sql-запроса.
+6. Остановите проект. В качестве ответа приложите скриншот sql-запроса.  
+![Скриншот-3](https://github.com/plusvaldis/virtd-homeworks/blob/main/05-virt-03-docker-intro/images/4.png) 
+
 
 ## Задача 4
 1. Запустите в Yandex Cloud ВМ (вам хватит 2 Гб Ram).
